@@ -2,6 +2,7 @@ package com.train.beans;
 
 public class Details {
     private int id;
+    private int detailId;
     private String name;
     private String spec; //规格
     private int num; //数量
@@ -13,6 +14,14 @@ public class Details {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getDetailId() {
+        return detailId;
+    }
+
+    public void setDetailId(int detailId) {
+        this.detailId = detailId;
     }
 
     public String getName() {
