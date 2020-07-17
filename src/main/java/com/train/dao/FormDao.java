@@ -49,6 +49,8 @@ public class FormDao {
         Form form = null;
         SqlSession sqlSession = MybatisUtil.getConn();
         form = sqlSession.selectOne("getForm", id);
+        DetailsDao detailsDao = new DetailsDao();
+        form.setDetail(detailsDao.getAllDetails(form.getDetailId()));
         sqlSession.commit();
         sqlSession.close();
         return form;
