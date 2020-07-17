@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="form">
+    <insert id="addForm" parameterType="com.train.beans.Form">
+        insert into form(department,detailId,user,date) values(#{department},#{detailId},#{user},#{date})
+    </insert>
+
+    <delete id="deleteForm" parameterType="int">
+        delete from form where id=#{id}
+    </delete>
+
+    <update id="updateForm" parameterType="com.train.beans.Form">
+        update form set detailId=#{detailId},department=#{department},user=#{user},date=#{date} where id=#{id}
+    </update>
+
+    <select id="getForm" parameterType="int" resultType="com.train.beans.Form">
+        select * from form where id=#{id}
+    </select>
+</mapper>
