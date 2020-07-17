@@ -1,9 +1,19 @@
 package com.train.beans;
 
-public class Goods {
+public class Details {
+    private int id;
     private String name;
     private String spec; //规格
     private int num; //数量
+//    private Map detail;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -31,8 +41,9 @@ public class Goods {
 
     @Override
     public String toString() {
-        return "Goods{" +
-                "name='" + name + '\'' +
+        return "Details{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", spec='" + spec + '\'' +
                 ", num=" + num +
                 '}';
