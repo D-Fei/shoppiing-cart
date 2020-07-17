@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="details">
+    <insert id="addDetail" parameterType="com.train.beans.Details">
+        insert into details(detailId,name,spec,num) values(#{detailId},#{name},#{spec},#{num})
+    </insert>
+
+    <delete id="deleteDetail" parameterType="int">
+        delete from details where id=#{id}
+    </delete>
+
+    <update id="updateDetail" parameterType="com.train.beans.Details">
+        update details set detailId=#{detailId},name=#{name},spec=#{spec},num=#{num} where id=#{id}
+    </update>
+
+    <select id="getDetail" parameterType="int" resultType="com.train.beans.Details">
+        select * from details where id=#{id}
+    </select>
+</mapper>
