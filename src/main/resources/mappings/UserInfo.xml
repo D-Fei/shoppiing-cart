@@ -5,4 +5,16 @@
     <select id="getUserById" parameterType="int" resultType="com.train.beans.User">
         select * from user where id = #{id}
     </select>
+
+    <insert id="insertUser" parameterType="com.train.beans.User">
+        insert into user(name,age) values (#{name},#{age})
+    </insert>
+
+    <update id="updateUset" parameterType="com.train.beans.User">
+        update user set name=#{name},age=#{age} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
 </mapper>
