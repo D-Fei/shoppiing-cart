@@ -6,7 +6,6 @@ public class Details {
     private String name;
     private String spec; //规格
     private int num; //数量
-//    private Map detail;
 
     public int getId() {
         return id;
@@ -52,6 +51,7 @@ public class Details {
     public String toString() {
         return "Details{" +
                 "id=" + id +
+                ", detailId=" + detailId +
                 ", name='" + name + '\'' +
                 ", spec='" + spec + '\'' +
                 ", num=" + num +
