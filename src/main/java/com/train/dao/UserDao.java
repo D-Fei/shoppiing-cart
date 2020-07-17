@@ -12,9 +12,44 @@ public class UserDao {
         User user = null;
         SqlSession sqlSession = MybatisUtil.getConn();
         user = sqlSession.selectOne("getUserById", id);
-        System.out.println(user.getId());
         sqlSession.commit();
         sqlSession.close();
         return user;
+    }
+
+    /**
+     * 增加
+     */
+    public int addUser(User user) {
+        int result = 0;
+        SqlSession sqlSession = MybatisUtil.getConn();
+        result = sqlSession.insert("insertUser", user);
+        sqlSession.commit();
+        sqlSession.close();
+        return result;
+    }
+
+    /**
+     * 根据id删除
+     */
+    public int deleteUser(int id) {
+        int result = 0;
+        SqlSession sqlSession = MybatisUtil.getConn();
+        result = sqlSession.delete("deleteUser", id);
+        sqlSession.commit();
+        sqlSession.close();
+        return result;
+    }
+
+    /**
+     * 根据id修改user
+     */
+    public int updateUser(User user) {
+        int result = 0;
+        SqlSession sqlSession = MybatisUtil.getConn();
+        result = sqlSession.update("updateUset", user);
+        sqlSession.commit();
+        sqlSession.close();
+        return result;
     }
 }
