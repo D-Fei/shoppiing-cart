@@ -16,5 +16,7 @@
     </environments>
     <mappers>
         <mapper resource="mappings/UserInfo.xml"/>
+        <mapper resource="mappings/FormInfo.xml"/>
+        <mapper resource="mappings/DetailsInfo.xml"/>
     </mappers>
 </configuration>
