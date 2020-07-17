@@ -17,4 +17,8 @@
     <select id="getDetail" parameterType="int" resultType="com.train.beans.Details">
         select * from details where id=#{id}
     </select>
+
+    <select id="getAllDetails" parameterType="int" resultType="com.train.beans.Details">
+        select * from details where detailId=#{detailId}
+    </select>
 </mapper>
