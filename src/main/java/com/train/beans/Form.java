@@ -1,10 +1,12 @@
 package com.train.beans;
 
+import java.util.List;
+
 public class Form {
     private int id; ///表单唯一标识
     private String department;  //申请部门
     private String user;  //申请人
-//    private List<Details> detail; //明细
+    private List<Details> detail; //明细
     private int detailId;
     private String date; //申请日期
 
@@ -48,12 +50,21 @@ public class Form {
         this.date = date;
     }
 
+    public List<Details> getDetail() {
+        return detail;
+    }
+
+    public void setDetail(List<Details> detail) {
+        this.detail = detail;
+    }
+
     @Override
     public String toString() {
         return "Form{" +
                 "id=" + id +
                 ", department='" + department + '\'' +
                 ", user='" + user + '\'' +
+                ", detail=" + detail +
                 ", detailId=" + detailId +
                 ", date='" + date + '\'' +
                 '}';
