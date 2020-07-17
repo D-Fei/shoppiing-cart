@@ -21,4 +21,8 @@
     <select id="getAllDetails" parameterType="int" resultType="com.train.beans.Details">
         select * from details where detailId=#{detailId}
     </select>
+
+    <delete id="deleteDetails" parameterType="int">
+        delete from details where detailId=#{id}
+    </delete>
 </mapper>
