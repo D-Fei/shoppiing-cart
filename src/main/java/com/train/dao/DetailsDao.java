@@ -4,6 +4,8 @@ import com.train.beans.Details;
 import com.train.common.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.List;
+
 public class DetailsDao {
     /**
      * 增加
@@ -52,8 +54,16 @@ public class DetailsDao {
         sqlSession.close();
         return details;
     }
+
     /**
      * 根据detailId查询，返回所有detailId相同的数据，返回一个list
      */
-
+    public List<Details> getAllDetails(int detailId) {
+        List<Details> details = null;
+        SqlSession sqlSession = MybatisUtil.getConn();
+        details = sqlSession.selectList("getAllDetails", detailId);
+        sqlSession.commit();
+        sqlSession.close();
+        return details;
+    }
 }
